@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Form - Visualize Your Location</title>
+    <link rel="stylesheet" href="mapForm.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <h1>🌍 Map Form</h1>
+        <p>Explore, locate, and visualize—instantly!</p>
+    </header>
+
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-container">
+            <p><strong>WELCOME TO MAP FORM!</strong> </p>
+            <p>Enter your details and watch your location update instantly.</p>
+            <p>Fun, right? Try it out!</p>
+            <p><strong>*Disclaimer:*</strong><i> Just Africa for now—gotta start somewhere! 🌍</i></p>
+
+            <form id="myForm">
+                <label for="name"> <span aria-label="required">*</span>Name:</label>
+                <input type="text" id="name" placeholder="First Name" required>
+
+                <label for="nationality"> <span aria-label="required">*</span>Nationality:</label>
+                <input type="text" id="nationality" placeholder="e.g.Nigerian"  required>
+
+                <label for="user_country"> <span aria-label="required">*</span>Country:</label>
+                <select id="user_country" onchange="updateStates(); updateMap();">
+                    <option value="">Choose a country</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Benin">Benin</option>
+                    <option value="Cameroon">Cameroon</option>
+                    <option value="Ghana">Ghana</option>
+                </select>
+
+                <label for="user_state"> <span aria-label="required">*</span>State:</label>
+                <select id="user_state" onchange="updateMap();">
+                    <option value="">Choose a state</option>
+                </select>
+
+                <button type="button" onclick="visualize()">Submit</button>
+            </form>
+
+            <div id="displayMessage"></div>
+
+            <footer>
+                <p>&copy; 2025 Tejuosho. Powered by <a href="https://leafletjs.com" target="_blank">Leaflet</a>.</p>
+              </footer>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="mapForm.js"></script>
+
+
+</body>
+</html>

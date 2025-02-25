@@ -1,0 +1,85 @@
+body {
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Flexbox for Layout: Form (Left) & Map (Right) */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center elements vertically */
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    gap: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+/* Ensure Form Container Stays on Left */
+.form-container {
+    width: 30%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Make Form Inputs More Readable */
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input,
+select,
+button {
+    padding: 10px;
+    margin: 5px 0;
+    width: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Map Now Takes Full Right-Side Space */
+.map-container {
+    flex-grow: 1;
+    height: 500px;
+    min-width: 50%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+/* Message Styling */
+#displayMessage {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    min-height: 50px;
+    white-space: pre-line;
+}
